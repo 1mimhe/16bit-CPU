@@ -1,4 +1,11 @@
-M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v {1 {vlog -work work -stats=none M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v
+M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v {1 {vlog -work work -stats=none M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v {1 {vlog -work work -stats=none M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALU
 

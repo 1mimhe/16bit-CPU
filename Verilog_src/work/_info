@@ -10,26 +10,50 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vALU
-!s110 1684245310
+Z0 !s110 1684272993
 !i10b 1
-!s100 >6aBkKd]H2Nn>P@hdjL8;1
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-IXHK?Y3WQ=MC=LOl@fDa]^0
-VDg1SIo80bB@j0V0VzS_@n1
-dM:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src
-w1684245308
+!s100 k:Fl7S^lRX=DFkNafGAId1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INbWFXz?GGXEM1_[P]mzQc1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dM:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src
+w1684269894
 8M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v
 FM:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v
-!i122 4
+!i122 16
 L0 1 29
-OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1684245310.000000
+Z5 !s108 1684272993.000000
 !s107 M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ALU.v|
 !i113 1
-o-work work
-tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 n@a@l@u
+vControlUnit
+R0
+!i10b 1
+!s100 TPNhmMCPM;Y[h;Oo<aF7W0
+R1
+ImFeEZi@1JJh>[^dY;^nLi0
+R2
+R3
+w1684272986
+8M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v
+FM:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v
+!i122 17
+L0 1 41
+R4
+r1
+!s85 0
+31
+R5
+!s107 M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|M:/Education/Uni/CA/Tamrin/Project/16bit-CPU/Verilog_src/ControlUnit.v|
+!i113 1
+R6
+R7
+n@control@unit

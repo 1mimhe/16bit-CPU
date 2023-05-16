@@ -7,7 +7,6 @@ module ALU(
 	);
 	integer i;
 
-	
 always @(*)
 begin
 	case(opcode)
