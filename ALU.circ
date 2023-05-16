@@ -80,6 +80,22 @@
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M167,52 Q171,62 175,52" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="140" stroke="#000000" stroke-width="2" width="250" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="170" y="122">ALU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="65" y="85">A</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="65" y="159">B</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="275" y="66">ZERO</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="274" y="124">Result</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="180" y="179">ALUselect</text>
+      <circ-port height="8" pin="220,120" width="8" x="46" y="76"/>
+      <circ-port height="8" pin="220,170" width="8" x="46" y="156"/>
+      <circ-port height="10" pin="760,200" width="10" x="295" y="55"/>
+      <circ-port height="10" pin="680,330" width="10" x="295" y="115"/>
+      <circ-port height="8" pin="600,420" width="8" x="176" y="186"/>
+      <circ-anchor facing="east" height="6" width="6" x="297" y="117"/>
+    </appear>
     <wire from="(270,170)" to="(270,430)"/>
     <wire from="(340,330)" to="(400,330)"/>
     <wire from="(440,130)" to="(500,130)"/>
@@ -149,35 +165,44 @@
     <comp lib="3" loc="(440,200)" name="Subtractor">
       <a name="width" val="16"/>
     </comp>
-    <comp lib="3" loc="(440,340)" name="Divider">
+    <comp lib="3" loc="(440,270)" name="Multiplier">
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(220,170)" name="Pin">
+    <comp lib="0" loc="(760,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="ZERO"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(680,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="16"/>
-      <a name="label" val="B"/>
+      <a name="label" val="result"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="3" loc="(440,340)" name="Divider">
+      <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(220,120)" name="Pin">
       <a name="width" val="16"/>
       <a name="label" val="A"/>
     </comp>
-    <comp lib="1" loc="(460,480)" name="NOR Gate">
-      <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="3" loc="(440,270)" name="Multiplier">
-      <a name="width" val="16"/>
-    </comp>
     <comp lib="1" loc="(750,200)" name="NOR Gate">
       <a name="size" val="70"/>
       <a name="inputs" val="17"/>
+    </comp>
+    <comp lib="0" loc="(220,170)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="label" val="B"/>
     </comp>
     <comp lib="1" loc="(460,550)" name="NAND Gate">
       <a name="width" val="16"/>
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(450,410)" name="OR Gate">
+    <comp lib="2" loc="(620,330)" name="Multiplexer">
+      <a name="select" val="3"/>
       <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
     </comp>
     <comp lib="3" loc="(440,130)" name="Adder">
       <a name="width" val="16"/>
@@ -186,27 +211,18 @@
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
     </comp>
+    <comp lib="1" loc="(460,480)" name="NOR Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(450,410)" name="OR Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </comp>
     <comp lib="0" loc="(600,420)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="3"/>
       <a name="label" val="Opcode"/>
-    </comp>
-    <comp lib="0" loc="(760,200)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="ZERO"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="2" loc="(620,330)" name="Multiplexer">
-      <a name="select" val="3"/>
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="0" loc="(680,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="label" val="result"/>
-      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>
