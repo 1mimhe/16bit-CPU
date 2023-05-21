@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project source="2.7.1" version="1.0">
-  This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
-
-  <lib desc="#Wiring" name="0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="16"/>
@@ -162,17 +161,28 @@
     <wire from="(650,280)" to="(650,330)"/>
     <wire from="(750,200)" to="(760,200)"/>
     <wire from="(330,390)" to="(400,390)"/>
-    <comp lib="3" loc="(440,200)" name="Subtractor">
+    <comp lib="3" loc="(440,340)" name="Divider">
       <a name="width" val="16"/>
     </comp>
-    <comp lib="3" loc="(440,270)" name="Multiplier">
+    <comp lib="1" loc="(750,200)" name="NOR Gate">
+      <a name="size" val="70"/>
+      <a name="inputs" val="17"/>
+    </comp>
+    <comp lib="1" loc="(450,410)" name="OR Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="2" loc="(620,330)" name="Multiplexer">
+      <a name="select" val="3"/>
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(760,200)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="ZERO"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="1" loc="(460,550)" name="NAND Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(460,480)" name="NOR Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(680,330)" name="Pin">
       <a name="facing" val="west"/>
@@ -181,48 +191,37 @@
       <a name="label" val="result"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="3" loc="(440,340)" name="Divider">
-      <a name="width" val="16"/>
+    <comp lib="0" loc="(760,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="ZERO"/>
+      <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(220,120)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp lib="1" loc="(750,200)" name="NOR Gate">
-      <a name="size" val="70"/>
-      <a name="inputs" val="17"/>
-    </comp>
-    <comp lib="0" loc="(220,170)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="1" loc="(460,550)" name="NAND Gate">
-      <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="2" loc="(620,330)" name="Multiplexer">
-      <a name="select" val="3"/>
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="3" loc="(440,130)" name="Adder">
+    <comp lib="3" loc="(440,200)" name="Subtractor">
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(650,280)" name="Splitter">
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
     </comp>
-    <comp lib="1" loc="(460,480)" name="NOR Gate">
+    <comp lib="0" loc="(220,120)" name="Pin">
       <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
+      <a name="label" val="A"/>
     </comp>
-    <comp lib="1" loc="(450,410)" name="OR Gate">
+    <comp lib="3" loc="(440,270)" name="Multiplier">
       <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(220,170)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="3" loc="(440,130)" name="Adder">
+      <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(600,420)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="3"/>
-      <a name="label" val="Opcode"/>
+      <a name="label" val="ALUctr"/>
     </comp>
   </circuit>
 </project>
