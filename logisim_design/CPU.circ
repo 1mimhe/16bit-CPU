@@ -49,8 +49,8 @@
     </tool>
   </lib>
   <lib desc="file#RegisterFile.circ" name="7"/>
-  <lib desc="file#ALU.circ" name="8"/>
-  <lib desc="file#ControlUnit.circ" name="9"/>
+  <lib desc="file#ControlUnit.circ" name="8"/>
+  <lib desc="file#ALU.circ" name="9"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -217,7 +217,6 @@
       <a name="facing" val="east"/>
       <a name="label" val="Branch"/>
     </comp>
-    <comp lib="8" loc="(1330,600)" name="main"/>
     <comp lib="3" loc="(1470,280)" name="Comparator">
       <a name="width" val="16"/>
     </comp>
@@ -244,7 +243,7 @@
     <comp lib="2" loc="(810,550)" name="Multiplexer">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="9" loc="(620,230)" name="main"/>
+    <comp lib="8" loc="(620,230)" name="main"/>
     <comp lib="0" loc="(630,350)" name="Tunnel">
       <a name="label" val="MemToReg"/>
     </comp>
@@ -343,6 +342,7 @@
       <a name="facing" val="south"/>
       <a name="label" val="CLK"/>
     </comp>
+    <comp lib="9" loc="(1330,600)" name="main"/>
     <comp lib="0" loc="(930,810)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="ExtOp"/>
