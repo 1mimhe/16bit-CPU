@@ -5,6 +5,7 @@ module ControlUnit(
 		output reg MemtoReg,
 		output reg RegWrite,
 		output reg MemWrite,
+		output reg MemRead,
 		output reg Branch,
 		output reg ExtOp,
 		output reg [2:0]ALUctr
@@ -31,6 +32,7 @@ begin
 	MemtoReg = lw;
 	RegWrite = RegDst | ori | lw;
 	MemWrite = sw;
+	MemRead = lw;
 	Branch = blt;
 	ExtOp =	lw | sw;
 
