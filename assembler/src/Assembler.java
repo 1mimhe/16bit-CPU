@@ -1,3 +1,5 @@
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Assembler {
@@ -7,6 +9,15 @@ public class Assembler {
 
     public static void main(String[] args) {
         addData();
+        
+        ArrayList<String> assembly = new ArrayList<>();
+        try {
+            ArrayList<String> instructions = readFromFile();
+            for (String inst : instructions) {
+                assembly.add(assembler(inst));
+            }
+            writeToFile(assembly);
+        } catch (Exception ignored) {}
     }
 
     private static void addData() {
@@ -69,5 +80,27 @@ public class Assembler {
         }
 
         return assembly.toString();
+    }
+
+    public static void writeToFile(ArrayList<String> assembly) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(".\\ass.txt"));
+        for (String inst : assembly) {
+            writer.write(inst + "\n");
+        }
+        writer.close();
+    }
+
+    public static ArrayList<String> readFromFile() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(".\\code.txt"));
+        ArrayList<String> instructions = new ArrayList<>();
+        String temp;
+
+        while ((temp = reader.readLine()) != null) {
+            instructions.add(temp);
+        }
+
+        reader.close();
+
+        return instructions;
     }
 }
