@@ -52,7 +52,7 @@ public class Assembler {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            System.out.println(binaryToHex(assemblyToBinary(line, opcodes, functions, registers, cmdTypes)));
+//            System.out.println(binaryToHex(assemblyToBinary(line, opcodes, functions, registers, cmdTypes)));
         }
         scanner.close();
     }
@@ -76,4 +76,9 @@ public class Assembler {
             answer.append(functions.get(sections[0]));
         } else { // command is I type
             if (sections[0].equals("beq")) {
-                answer.append(opcodes)
+                answer.append(opcodes);
+            }
+        }
+        return null;
+    }
+}
