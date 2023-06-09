@@ -11,13 +11,13 @@ module RegisterFile(
 					 
 	reg[15:0] R[0:15];
 	
-	assign readdata1 = R[regread1];
-	assign readdata2 = R[regread2];
-
 	always @(posedge clk)
 	begin
-		if(regwrite) R[regdst] = writedata;
+		if(regwrite) R[regdst] <= writedata;
 	end
+
+	assign readdata1 = R[regread1];
+	assign readdata2 = R[regread2];
 	
 endmodule
 
