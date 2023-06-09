@@ -49,3 +49,25 @@ public class Assembler {
 
         return bin.toString();
     }
+
+    // lw/sw $s0, imm($s1) => lw $s0, $s1, imm
+    public static String assembler(String inst) {
+        inst = inst.replace(",", "");
+        String[] sections = inst.split(" ");
+        StringBuilder assembly = new StringBuilder();
+
+        if (types.get(sections[0]).equals("R")) { // R-type
+            assembly.append(opcodes.get(sections[0])); // Opcode
+            assembly.append(registers.get(sections[2])); // rs
+            assembly.append(registers.get(sections[3])); // rt
+            assembly.append(registers.get(sections[1])); // rd
+        } else if (types.get(sections[0]).equals("I")) { // I-type
+            assembly.append(opcodes.get(sections[0])); // Opcode
+            assembly.append(registers.get(sections[2])); // rt(rd)
+            assembly.append(registers.get(sections[1])); // rs
+            assembly.append(registers.get(sections[3])); // imm
+        }
+
+        return assembly.toString();
+    }
+}
