@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class AssemblyConverter {
+public class Assembler {
     public static void main(String[] args) {
         HashMap<String, String> opcodes = new HashMap<>();
         HashMap<String, String> registers = new HashMap<>();
