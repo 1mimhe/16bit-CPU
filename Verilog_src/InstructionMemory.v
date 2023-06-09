@@ -5,7 +5,7 @@ module InstructionMemory(
 
 	reg[31:0] memory [0:65535];
 	
-	initial $readmemh("code.txt",memory);
+	initial $readmemh("ass.txt",memory);
 
 	assign inst = memory[pc];
 
