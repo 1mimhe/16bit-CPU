@@ -117,7 +117,6 @@
     <wire from="(810,550)" to="(840,550)"/>
     <wire from="(710,540)" to="(780,540)"/>
     <wire from="(1640,150)" to="(1660,150)"/>
-    <wire from="(1110,160)" to="(1110,650)"/>
     <wire from="(1660,50)" to="(1660,150)"/>
     <wire from="(1010,830)" to="(1090,830)"/>
     <wire from="(950,840)" to="(950,850)"/>
@@ -175,7 +174,6 @@
     <wire from="(490,140)" to="(840,140)"/>
     <wire from="(710,690)" to="(1050,690)"/>
     <wire from="(1140,630)" to="(1140,750)"/>
-    <wire from="(1190,170)" to="(1390,170)"/>
     <wire from="(470,720)" to="(490,720)"/>
     <wire from="(720,680)" to="(720,840)"/>
     <wire from="(1360,290)" to="(1430,290)"/>
@@ -183,12 +181,15 @@
     <wire from="(1490,640)" to="(1490,660)"/>
     <wire from="(1190,660)" to="(1190,680)"/>
     <wire from="(1290,640)" to="(1290,660)"/>
+    <wire from="(1110,240)" to="(1110,650)"/>
     <wire from="(440,750)" to="(440,760)"/>
     <wire from="(1470,230)" to="(1510,230)"/>
     <wire from="(1470,270)" to="(1510,270)"/>
     <wire from="(1520,600)" to="(1560,600)"/>
     <wire from="(680,680)" to="(720,680)"/>
+    <wire from="(1230,170)" to="(1230,240)"/>
     <wire from="(1370,620)" to="(1370,750)"/>
+    <wire from="(1110,240)" to="(1230,240)"/>
     <wire from="(900,490)" to="(900,510)"/>
     <wire from="(1450,640)" to="(1450,650)"/>
     <wire from="(1480,670)" to="(1480,680)"/>
@@ -198,6 +199,7 @@
     <wire from="(1110,650)" to="(1180,650)"/>
     <wire from="(950,840)" to="(980,840)"/>
     <wire from="(440,750)" to="(450,750)"/>
+    <wire from="(1230,170)" to="(1390,170)"/>
     <wire from="(510,580)" to="(510,640)"/>
     <wire from="(1370,150)" to="(1390,150)"/>
     <wire from="(830,620)" to="(840,620)"/>
@@ -215,6 +217,7 @@
       <a name="facing" val="south"/>
       <a name="label" val="Clr"/>
     </comp>
+    <comp lib="8" loc="(620,230)" name="main"/>
     <comp lib="0" loc="(1570,660)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="MemToReg"/>
@@ -345,7 +348,6 @@
       <a name="enable" val="false"/>
     </comp>
     <comp lib="9" loc="(1330,600)" name="main"/>
-    <comp lib="8" loc="(620,230)" name="main"/>
     <comp lib="0" loc="(630,510)" name="Tunnel">
       <a name="label" val="RegDst"/>
     </comp>
