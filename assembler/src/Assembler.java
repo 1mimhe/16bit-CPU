@@ -9,7 +9,7 @@ public class Assembler {
 
     public static void main(String[] args) {
         addData();
-        
+
         ArrayList<String> assembly = new ArrayList<>();
         try {
             ArrayList<String> instructions = readFromFile();
@@ -54,14 +54,14 @@ public class Assembler {
     private static String decToBin(int dec, int digits) {
         StringBuilder bin = new StringBuilder(Integer.toBinaryString(dec));
 
-        for (int i = 0; i < digits - bin.length(); i++) {
+        for (int i = 0; i < digits - Integer.toBinaryString(dec).length() ; i++) {
             bin.insert(0, "0");
         }
 
         return bin.toString();
     }
 
-    // lw/sw $s0, imm($s1) => lw $s0, $s1, imm
+    // lw/sw $s0, offset($s1) => lw $s0, $s1, offset
     public static String assembler(String inst) {
         inst = inst.replace(",", "");
         String[] sections = inst.split(" ");
@@ -76,22 +76,29 @@ public class Assembler {
             assembly.append(opcodes.get(sections[0])); // Opcode
             assembly.append(registers.get(sections[2])); // rt(rd)
             assembly.append(registers.get(sections[1])); // rs
-            assembly.append(registers.get(sections[3])); // imm
+            assembly.append(decToBin(Integer.parseInt(sections[3]), 4)); // imm
         }
 
         return assembly.toString();
     }
 
     public static void writeToFile(ArrayList<String> assembly) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(".\\ass.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("bin.txt"));
         for (String inst : assembly) {
             writer.write(inst + "\n");
         }
         writer.close();
+        BufferedWriter writer2 = new BufferedWriter(new FileWriter("hex.txt"));
+        for (String inst : assembly) {
+            int decimal = Integer.parseInt(inst,2);
+            String hexStr = Integer.toString(decimal,16);
+            writer2.write(hexStr + "\n");
+        }
+        writer2.close();
     }
 
     public static ArrayList<String> readFromFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(".\\code.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("code.asm"));
         ArrayList<String> instructions = new ArrayList<>();
         String temp;
 

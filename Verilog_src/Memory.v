@@ -16,7 +16,7 @@ module Memory(
 	
 	always @(negedge clk)
 	begin
-		if(memread) readdata = memory[address];
+		if(memread) readdata <= memory[address];
 	end
 	
 endmodule
