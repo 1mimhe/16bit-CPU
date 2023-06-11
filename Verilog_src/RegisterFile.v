@@ -18,8 +18,8 @@ module RegisterFile(
 
 	always @(negedge clk)
 	begin
-		readdata1 = R[regread1];
-		readdata2 = R[regread2];
+		readdata1 <= R[regread1];
+		readdata2 <= R[regread2];
 	end
 	
 endmodule
