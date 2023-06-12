@@ -1,5 +1,7 @@
 # 16bit-CPU
 
+![cpu](cpu.png)
+
 A simple 16-bit cpu designed in Logisim and coded in Verilog
 
 This is the project of Computer Architecture and Design Class.
@@ -30,3 +32,5 @@ Opcode(4-bit) | Rs(4-bit) | Rt(4-bit) | Imm/Address/Offset(4-bit)
 |sw|0111|I|
 |lw|1000|I|
 |blt|1001|I|
+
+P.S. Unfortunately the verilog code probably does not work as intended, you would be more than welcome to find its problem(s) and fix it!
