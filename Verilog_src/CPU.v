@@ -17,10 +17,10 @@ module CPU(
 	wire[15:0] readdata1;
 	wire[15:0] readdata2;
 	wire[15:0] ALUResult;
-	reg[3:0] regwrite; // Register Destination
+	wire[3:0] regwrite; // Register Destination
 	wire[15:0] readdata; // From Memory
-	reg [15:0] writedata;
-	reg[15:0] ALUinput2;
+	wire [15:0] writedata;
+	wire[15:0] ALUinput2;
 
 	InstructionMemory ins_mem(pc, instruction);
 
@@ -34,7 +34,7 @@ module CPU(
             ext_imm = { 12'd0, instruction[3:0] };
     end
 	
-	always @(posedge clk)
+	always @(*)
 	begin
 		if (Branch && zero)
 			pc <= (pc + 1) + ext_imm;
@@ -42,33 +42,15 @@ module CPU(
 			pc <= pc + 1;
 	end
 	
-	always @(posedge clk)
-	begin
-		if (RegDst)
-			regwrite <= instruction[3:0];
-		else
-			regwrite <= instruction[7:4];
-	end
 	
 	RegisterFile regfile(clk, RegWrite, instruction[11:8], instruction[7:4], regwrite, writedata, readdata1, readdata2);
 	
-	always @(posedge clk)
-	begin
-		if (ALUsrc)
-			ALUinput2 <= ext_imm;
-		else
-			ALUinput2 <= readdata2;
-	end
-	
 	ALU alu(readdata1, ALUinput2, ALUctr, ALUResult, zero);
-
-	always @(posedge clk)
-	begin
-		if (MemToReg)
-			writedata <= readdata;
-		else
-			writedata <= ALUResult;
-	end
 	
 	Memory memory(clk, MemWrite, MemRead, ALUsrc, readdata2, readdata);
+
+	Multiplexer16 mul_1(MemToReg, readdata, ALUResult, writedata);
+	Multiplexer16 mul_2(ALUsrc, ext_imm, readdata2, ALUinput2);	
+	Multiplexer4 mul_3(RegDst, instruction[3:0], instruction[7:4], regwrite);
+
 endmodule
