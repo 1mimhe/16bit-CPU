@@ -1,7 +1,7 @@
 module CPU(
 	input clk
     );
-	reg[15:0] pc;
+	reg[15:0] pc = 16'd0;
 	wire RegWrite; // Control Unit Signal
 	wire MemWrite;
 	wire MemRead;
@@ -26,13 +26,13 @@ module CPU(
 
 	ControlUnit control_unit(instruction[15:12], RegDst, ALUsrc, MemToReg, RegWrite, MemWrite, MemRead, Branch, ExtOp, ALUctr);
 
-	always @(*)
-	begin
-		if (ExtOp)
-			ext_imm <= instruction[3:0] <<< 12;
-		else
-			ext_imm <= instruction[3:0] << 12;
-	end
+    always @(posedge clk)
+    begin
+        if (ExtOp)
+            ext_imm = $signed(instruction[3:0]);
+        else
+            ext_imm = { 12'd0, instruction[3:0] };
+    end
 	
 	always @(posedge clk)
 	begin
@@ -42,7 +42,7 @@ module CPU(
 			pc <= pc + 1;
 	end
 	
-	always @(*)
+	always @(posedge clk)
 	begin
 		if (RegDst)
 			regwrite <= instruction[3:0];
@@ -52,7 +52,7 @@ module CPU(
 	
 	RegisterFile regfile(clk, RegWrite, instruction[11:8], instruction[7:4], regwrite, writedata, readdata1, readdata2);
 	
-	always @(*)
+	always @(posedge clk)
 	begin
 		if (ALUsrc)
 			ALUinput2 <= ext_imm;
@@ -62,7 +62,7 @@ module CPU(
 	
 	ALU alu(readdata1, ALUinput2, ALUctr, ALUResult, zero);
 
-	always @(*)
+	always @(posedge clk)
 	begin
 		if (MemToReg)
 			writedata <= readdata;

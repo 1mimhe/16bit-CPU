@@ -34,7 +34,7 @@ begin
 	MemWrite = sw;
 	MemRead = lw;
 	Branch = blt;
-	ExtOp =	lw | sw;
+	ExtOp =	lw | sw | blt;
 
 	if(MemWrite) ALUctr = 3'b000;
 	else ALUctr = Opcode[2:0];
