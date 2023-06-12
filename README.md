@@ -33,4 +33,4 @@ Opcode(4-bit) | Rs(4-bit) | Rt(4-bit) | Imm/Address/Offset(4-bit)
 |lw|1000|I|
 |blt|1001|I|
 
-P.S. Unfortunately the verilog code probably does not work as intended, you would be more than welcome to find its problem(s) and fix it!
+P.S. Unfortunately, the Verilog code does not work as intended. You would be more than welcome to find its problem(s) and fix it!
